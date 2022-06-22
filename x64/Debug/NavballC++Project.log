@@ -2,31 +2,31 @@
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(39,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(40,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(41,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(168,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(169,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(170,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(171,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(189,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(190,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(191,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(192,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(211,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(261,26): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(263,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(264,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(265,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(266,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(267,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(268,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(269,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(271,31): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(272,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(273,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(274,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(275,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(276,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(277,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(298,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(330,13): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(341,13): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(189,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(190,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(191,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(192,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(210,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(211,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(212,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(213,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(232,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(282,26): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(284,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(285,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(286,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(287,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(288,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(289,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(290,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(292,31): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(293,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(294,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(295,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(296,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(297,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(298,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(319,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(351,13): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(362,13): warning C4305: 'initializing': truncation from 'double' to 'float'
   NavballC++Project.vcxproj -> D:\Programming\Visual Studio Files\source\repos\NavballC++Project\x64\Debug\NavballC++Project.exe

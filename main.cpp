@@ -105,6 +105,13 @@ int main()
     cout<<"Hello World!! \n";
     displayNavballValues();
 
+    sf::Font font;
+    if (!font.loadFromFile("D:\\Programming\\Visual Studio Files\\source\\repos\\NavballC++Project\\Libraries\\fonts\\arial.ttf"))
+    {
+        // error...
+        cout << "error" << endl;
+    }
+
     struct planeInfo{        // Declare a local structure 
         float horizontal, vertical, roll;
     };
@@ -113,11 +120,23 @@ int main()
 
     sf::Event event;
 
+
+    sf::Text text;
+    text.setFont(font); // font is a sf::Font
+    text.setString("000");
+    text.setCharacterSize(24); // in pixels
+    text.setPosition(205.f, 460.f);
+
     sf::RectangleShape NavballBox(sf::Vector2f(450.f, 450.f));
+    sf::RectangleShape HeadingBox(sf::Vector2f(70.f, 40.f));
     sf::CircleShape NavballCircle(225.f);
 
     NavballBox.setFillColor(sf::Color::Transparent);
     NavballBox.setOutlineThickness(2.f);
+
+    HeadingBox.setPosition(190.f, 452.f);
+    HeadingBox.setFillColor(sf::Color::Transparent);
+    HeadingBox.setOutlineThickness(2.f);
     
     // set a 1-pixel wide white outline
     NavballCircle.setFillColor(sf::Color::Transparent);
@@ -125,9 +144,9 @@ int main()
     //NavballCircle.setOutlineColor(sf::Color(250, 150, 100));
 
     // define a circle with radius = 200
-    EllipseShape EllipseShape(sf::Vector2f(50.f, 250.f));
-    EllipseShape.setFillColor(sf::Color::Transparent);
-    EllipseShape.setOutlineThickness(1.f);
+    //EllipseShape EllipseShape(sf::Vector2f(50.f, 250.f));
+    //EllipseShape.setFillColor(sf::Color::Transparent);
+    //EllipseShape.setOutlineThickness(1.f);
 
     while (window.isOpen()) {
         while (window.pollEvent(event)) {
@@ -141,6 +160,8 @@ int main()
 
             updateNavballValues();
             displayNavballValues();
+
+            text.setString( to_string((int)horizontalHeading));
 
             /*
             auto coords = attitudePoints(verticalHeading, rollAngle);
@@ -356,9 +377,12 @@ int main()
             // clear the window with black color
             window.clear(sf::Color::Black);
             window.draw(NavballBox);
+            window.draw(HeadingBox);
             window.draw(NavballCircle);
             //window.draw(line);
             window.draw(curvexmain);
+
+            window.draw(text);
 
             /*
             window.draw(curvexmedtop);
