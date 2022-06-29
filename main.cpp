@@ -11,7 +11,7 @@ them in a navigation ball formal using sfml in 2d.
 #include <string>
 #include <math.h>       
 #include <SFML/Graphics.hpp>
-#include "EllipseShape.cpp"
+//#include "EllipseShape.cpp"
 #include <windows.h>
 
 #include <chrono>
@@ -36,7 +36,7 @@ void updateNavballValues(){
             
         }
         
-        rollAngle = stoi(arr[2]);
+        rollAngle = -stoi(arr[2]);
         verticalHeading = stoi(arr[1]);
         horizontalHeading = stoi(arr[0]);
         navballValuesFile.close();
@@ -53,47 +53,17 @@ void displayNavballValues(){
   
 }
 
-/*
-auto attitudePoints(float verticalHeading, float rollAngleDeg) {
-
-    static const float pi = 3.141592654f;
-    float navballRadius = 225.f;
-    float verticalHeadingResult;
-    double x1 = 0.0;
-    double y1 = 0.0;
-    double x2 = 225.0;
-    double y2 = -112.5;
-
-    float rollAngle =  rollAngleDeg / (180.0 / pi);
-
-    
-    cout << "rollAngleRad; " << rollAngle << "\n";
-
-    verticalHeadingResult = ((verticalHeading / 90) * navballRadius);
-
-    x1 = (-verticalHeadingResult * sin(rollAngle) + 225 * pow(sin(rollAngle), 2.0) + 225 - sqrt(-pow(verticalHeadingResult, 2.0) + 50625 * pow(sin(rollAngle), 2.0) + 50625)) / (pow(sin(rollAngle), 2.0) + 1);
-    //cout << "x1: " << x1 << "\n";
-    y1 = sin(rollAngle) * (x1 - 225) + 225 + verticalHeadingResult;
-    //cout << "y1: " << y1 << "\n";
-
-    x2 = (-verticalHeadingResult * sin(rollAngle) + 225 * pow(sin(rollAngle), 2.0) + 225 + sqrt(-pow(verticalHeadingResult, 2.0) + 50625 * pow(sin(rollAngle), 2.0) + 50625)) / (pow(sin(rollAngle), 2.0) + 1);
-    //cout << "x2: " << x2 << "\n";
-    y2 = sin(rollAngle) * (x2 - 225) + 225 + verticalHeadingResult;
-    //cout << "y2: " << y2 << "\n";
-
-    struct vertexes {        // Declare a local structure 
-        double x1, y1, x2, y2;
-    };
-    return vertexes{ x1, y1, x2, y2 }; // Return the local structure
-
-}
-*/
 
 float sphereSizeAdjustment(float original) {
     // 90 is the normal radius of a sphere.
     // 225 is the chosen radius of the drawn sphere.
     return (original / 90) * 225;
 }
+
+float degToRad(float deg) {
+    return (deg / (180.0 / pi));
+}
+
 
 int main()
 {
@@ -127,6 +97,47 @@ int main()
     text.setCharacterSize(24); // in pixels
     text.setPosition(205.f, 460.f);
 
+    sf::ConvexShape convexPlaneIcon;
+    sf::Vector2f iconPoints[10] = { 
+        sf::Vector2f(225.f - 60.f, 225.f - 1.f),
+        sf::Vector2f(225.f - 60.f, 225.f + 1.f),
+        sf::Vector2f(225.f - 20.f, 225.f + 1.f),
+        sf::Vector2f(225.f, 225.f + 21.f),
+        sf::Vector2f(225.f + 20.f, 225.f + 1.f),
+        sf::Vector2f(225.f + 60.f, 225.f + 1.f),
+        sf::Vector2f(225.f + 60.f, 225.f - 1.f),
+        sf::Vector2f(225.f + 20.f, 225.f - 1.f),
+        sf::Vector2f(225.f, 225.f + 19.f),
+        sf::Vector2f(225.f - 20.f, 225.f - 1.f)
+         };
+
+    // resize it to 5 points
+    convexPlaneIcon.setPointCount(10);
+
+    // define the points
+    for (int pt = 0; pt < 10; pt++) {
+        convexPlaneIcon.setPoint(pt, iconPoints[pt]);
+   }
+    convexPlaneIcon.setFillColor(sf::Color::Transparent);
+    convexPlaneIcon.setOutlineThickness(3.f);
+    convexPlaneIcon.setOutlineColor(sf::Color::Yellow);
+           
+
+    
+    sf::ConvexShape convexSky;
+    sf::ConvexShape convexLand;
+    
+    sf::Color blueSky(30, 180, 220);
+    convexSky.setPointCount(200);
+    convexSky.setFillColor(blueSky);
+    convexSky.setOutlineThickness(0.f);
+
+    sf::Color orangeLand(220, 140, 30);
+    convexLand.setPointCount(200);
+    convexLand.setFillColor(orangeLand);
+    convexLand.setOutlineThickness(0.f);
+    
+
     sf::RectangleShape NavballBox(sf::Vector2f(450.f, 450.f));
     sf::RectangleShape HeadingBox(sf::Vector2f(70.f, 40.f));
     sf::CircleShape NavballCircle(225.f);
@@ -138,15 +149,9 @@ int main()
     HeadingBox.setFillColor(sf::Color::Transparent);
     HeadingBox.setOutlineThickness(2.f);
     
-    // set a 1-pixel wide white outline
     NavballCircle.setFillColor(sf::Color::Transparent);
     NavballCircle.setOutlineThickness(1.f);
-    //NavballCircle.setOutlineColor(sf::Color(250, 150, 100));
 
-    // define a circle with radius = 200
-    //EllipseShape EllipseShape(sf::Vector2f(50.f, 250.f));
-    //EllipseShape.setFillColor(sf::Color::Transparent);
-    //EllipseShape.setOutlineThickness(1.f);
 
     while (window.isOpen()) {
         while (window.pollEvent(event)) {
@@ -159,19 +164,14 @@ int main()
         for (int i = 0; i < 5; i++) {
 
             updateNavballValues();
+            // testing values
+            //rollAngle = 0;
+            //verticalHeading = 0;
+            //horizontalHeading = 180;
             displayNavballValues();
+            
 
             text.setString( to_string((int)horizontalHeading));
-
-            /*
-            auto coords = attitudePoints(verticalHeading, rollAngle);
-            cout << "vert1: " << coords.x1 << "," << coords.y1 << "\n";
-            cout << "vert2: " << coords.x2 << "," << coords.y2 << "\n";
-
-            sf::VertexArray line(sf::Lines, 2);
-            line[0].position = sf::Vector2f(coords.x1, coords.y1);
-            line[1].position = sf::Vector2f(coords.x2, coords.y2);
-            */
 
             // y axis curves
             float a = 225;
@@ -326,7 +326,10 @@ int main()
             // 225 represents the horizontal and vertical transformation of the circle which is a constant 225.
             // t represents the parametric variable. To represent a semi ellipse, the value of t goes from 0 to pi. a full ellipse is 2pi.
 
-            sf::Color grey(105, 105, 105);
+            sf::Color grey(192, 192, 192);
+            //convex.setPoint(0, sf::Vector2f(((a* cos(0))* cos(px) - (bxmainadj * sin(0)) * sin(px) + 225), ((bxmainadj* sin(0))* cos(px) + (a * cos(0)) * sin(px) + 225)));
+            int convexSkyIndex = 0;
+            int convexLandIndex = 0;
 
             for (float t = pi/100; t < pi; t+=pi/100)
             {
@@ -341,14 +344,49 @@ int main()
                 curveymini3.append(sf::Vertex(sf::Vector2f(((a * cos(t)) * cos(py) - (bymini3adj * sin(t)) * sin(py) + 225), ((bymini3adj * sin(t)) * cos(py) + (a * cos(t)) * sin(py) + 225)), grey));
                 curveymini4.append(sf::Vertex(sf::Vector2f(((a * cos(t)) * cos(py) - (bymini4adj * sin(t)) * sin(py) + 225), ((bymini4adj * sin(t)) * cos(py) + (a * cos(t)) * sin(py) + 225)), grey));
 
+                
                 curvexmain.append(sf::Vertex(sf::Vector2f(((a* cos(t))* cos(px) - (bxmainadj * sin(t)) * sin(px) + 225), ((bxmainadj * sin(t))* cos(px) + (a * cos(t)) * sin(px) + 225))));
-
-                curvexmedtop.append(sf::Vertex(sf::Vector2f(((a * cos(t)) * cos(px) - (bxmedtopadj * sin(t)) * sin(px) + 225), ((bxmedtopadj * sin(t)) * cos(px) + (a * cos(t)) * sin(px) + 225))));
-                curvexmedbottom.append(sf::Vertex(sf::Vector2f(((a * cos(t)) * cos(px) - (bxmedbottomadj * sin(t)) * sin(px) + 225), ((bxmedbottomadj * sin(t)) * cos(px) + (a * cos(t)) * sin(px) + 225))));
-
+                convexSky.setPoint(convexSkyIndex, sf::Vector2f(((a * cos(t)) * cos(px) - (bxmainadj * sin(t)) * sin(px) + 225), ((bxmainadj * sin(t)) * cos(px) + (a * cos(t)) * sin(px) + 225)));
+                convexLand.setPoint(convexLandIndex, sf::Vector2f(((a * cos(t)) * cos(px) - (bxmainadj * sin(t)) * sin(px) + 225), ((bxmainadj * sin(t)) * cos(px) + (a * cos(t)) * sin(px) + 225)));
+                convexSkyIndex++;
+                convexLandIndex++;
+             
             }
 
-            for (float t = pi * 0.42; t < pi * 0.58; t += pi / 50)
+            double initialT = degToRad(0 + rollAngle);
+            double targetT = degToRad(180 + rollAngle);
+
+            cout << "initial: " << initialT << ", target: " << targetT << endl;
+            int r = 225;           
+
+            for (double t = targetT; t >= initialT; t -= pi / 100) {
+
+                convexSky.setPoint(convexSkyIndex, sf::Vector2f(-r*cos(t) + 225, -r*sin(t) + 225));
+                //cout << convexSkyIndex << " point is:  " << convexSky.getPoint(convexSkyIndex).x << " : " << convexSky.getPoint(convexSkyIndex).y << " ; t is:" << t << endl;
+                convexSkyIndex++;
+
+            }
+            convexSky.setPoint(199, sf::Vector2f(-r * cos(initialT) + 225, -r * sin(initialT) + 225));
+
+            for (float t = targetT; t > initialT; t -= pi / 100) {
+
+                convexLand.setPoint(convexLandIndex, sf::Vector2f(r * cos(t) + 225, r * sin(t) + 225));
+                convexLandIndex++;
+
+            }         
+            convexLand.setPoint(199, sf::Vector2f(r * cos(initialT) + 225, r * sin(initialT) + 225));
+
+
+
+
+            for (float t = pi * 0.3; t <= pi * 0.7; t += pi / 50)
+            {
+                curvexmedtop.append(sf::Vertex(sf::Vector2f(((a * cos(t)) * cos(px) - (bxmedtopadj * sin(t)) * sin(px) + 225), ((bxmedtopadj * sin(t)) * cos(px) + (a * cos(t)) * sin(px) + 225))));
+                curvexmedbottom.append(sf::Vertex(sf::Vector2f(((a * cos(t)) * cos(px) - (bxmedbottomadj * sin(t)) * sin(px) + 225), ((bxmedbottomadj * sin(t)) * cos(px) + (a * cos(t)) * sin(px) + 225))));
+                
+            }
+
+            for (float t = pi * 0.44; t <= pi * 0.58; t += pi / 50)
             {
                 
                 curvexminitop2.append(sf::Vertex(sf::Vector2f(((a * cos(t)) * cos(px) - (bxminitopadj2 * sin(t)) * sin(px) + 225), ((bxminitopadj2 * sin(t)) * cos(px) + (a * cos(t)) * sin(px) + 225))));
@@ -359,7 +397,7 @@ int main()
 
             }
 
-            for (float t = pi * 0.46; t < pi * 0.54; t += pi / 50)
+            for (float t = pi * 0.46; t < pi * 0.56; t += pi / 50)
             {
 
                 curvexminitop1.append(sf::Vertex(sf::Vector2f(((a * cos(t)) * cos(px) - (bxminitopadj1 * sin(t)) * sin(px) + 225), ((bxminitopadj1 * sin(t)) * cos(px) + (a * cos(t)) * sin(px) + 225)), grey));
@@ -376,31 +414,24 @@ int main()
 
             // clear the window with black color
             window.clear(sf::Color::Black);
+
+            if (verticalHeading > 0) {
+                window.draw(convexLand);
+                window.draw(convexSky);
+            }
+            else {
+                window.draw(convexSky);
+                window.draw(convexLand);
+            }
+
             window.draw(NavballBox);
             window.draw(HeadingBox);
             window.draw(NavballCircle);
-            //window.draw(line);
+
             window.draw(curvexmain);
 
             window.draw(text);
 
-            /*
-            window.draw(curvexmedtop);
-            window.draw(curvexminitop1);
-            window.draw(curvexminitop2);
-            window.draw(curvexminitop3);
-            window.draw(curvexminitop4);
-            window.draw(curvexminitop5);
-            window.draw(curvexminitop6);
-
-            window.draw(curvexmedbottom);
-            window.draw(curvexminibottom1);
-            window.draw(curvexminibottom2);
-            window.draw(curvexminibottom3);
-            window.draw(curvexminibottom4);
-            window.draw(curvexminibottom5);
-            window.draw(curvexminibottom6);
-            */
 
             //x axis bound checking
             if (-90 < bxmedtop && bxmedtop < 90) {
@@ -473,12 +504,14 @@ int main()
             if (-90 < bymini4 && bymini4 < 90) {
                 window.draw(curveymini4);
             }
+
+            window.draw(convexPlaneIcon);
             
 
             // end the current frame
             window.display();
 
-            sleep_for(milliseconds(1000));
+            sleep_for(milliseconds(500));
 
         }    
 

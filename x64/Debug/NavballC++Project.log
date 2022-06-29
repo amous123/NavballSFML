@@ -1,7 +1,8 @@
 ﻿  main.cpp
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(39,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(39,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(40,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(41,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(64,17): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(189,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(190,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(191,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
@@ -27,6 +28,37 @@ D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(296,3
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(297,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(298,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(319,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(351,13): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(362,13): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(364,92): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(364,75): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(369,95): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(369,69): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(371,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(377,94): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(377,69): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(389,13): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Programming\Visual Studio Files\source\repos\NavballC++Project\main.cpp(400,13): warning C4305: 'initializing': truncation from 'double' to 'float'
   NavballC++Project.vcxproj -> D:\Programming\Visual Studio Files\source\repos\NavballC++Project\x64\Debug\NavballC++Project.exe

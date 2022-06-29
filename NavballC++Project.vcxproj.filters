@@ -21,9 +21,15 @@
     <ClCompile Include="EllipseShape.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ConvexSphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EllipseShape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexSphere.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
